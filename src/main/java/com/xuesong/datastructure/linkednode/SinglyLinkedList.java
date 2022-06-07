@@ -38,16 +38,16 @@ public class SinglyLinkedList {
             head  = new SinglyLinkedNode(value);
         } else {
             SinglyLinkedNode next = head.getNext();
-            SinglyLinkedNode last = null;
+            SinglyLinkedNode pre = null;
             if(next==null){
                 head.setNext(new SinglyLinkedNode(value));
                 return;
             }
             while(next!=null) {
-                last = next;
+                pre = next;
                 next = next.getNext();
             }
-            last.setNext(new SinglyLinkedNode(value));
+            pre.setNext(new SinglyLinkedNode(value));
         }
     }
 
@@ -58,7 +58,7 @@ public class SinglyLinkedList {
             if (head.getValue() == value) {
                 return head;
             } else {
-                SinglyLinkedNode next = head;
+                SinglyLinkedNode next = head.getNext();
                 while(next!=null){
                     if(value==next.getValue()){
                         return next;
@@ -83,7 +83,8 @@ public class SinglyLinkedList {
                     pre = next;
                     next = next.getNext();
                 }
-                if(value==next.value){
+                //找到了
+                if(next!=null&&value==next.value){
                     pre.setNext(next.getNext());
                 }
             }
@@ -120,10 +121,11 @@ public class SinglyLinkedList {
         link.add("b");
         link.add("c");
         System.out.println(link);
-        System.out.println(link.search("c").getValue());
-        link.remove("c");
+        System.out.println(link.search("b"));
+        System.out.println(link.search("d"));
+        link.remove("b");
         System.out.println(link);
-        link.set("b","d");
+        link.set("c","d");
         System.out.println(link);
     }
 
