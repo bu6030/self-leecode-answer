@@ -1,4 +1,4 @@
-package com.xuesong.datastructure;
+package com.xuesong.datastructure.linkednode;
 
 /**
  * 单向链表
