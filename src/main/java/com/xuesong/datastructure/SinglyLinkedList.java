@@ -1,45 +1,45 @@
 package com.xuesong.datastructure;
 
 /**
- * 单链表
+ * 单向链表
  */
-public class SingleLinkedList {
+public class SinglyLinkedList {
 
-    private SingleLinkedNode head;
-    public static class SingleLinkedNode {
-        public SingleLinkedNode (String value) {
+    private SinglyLinkedNode head;
+    public static class SinglyLinkedNode {
+        public SinglyLinkedNode (String value) {
             this.value = value;
         }
-        private SingleLinkedNode next;
+        private SinglyLinkedNode next;
         private String value;
     }
 
     public void add(String value){
         if (head == null) {
-            head  = new SingleLinkedNode(value);
+            head  = new SinglyLinkedNode(value);
         } else {
-            SingleLinkedNode next = head.next;
-            SingleLinkedNode last = null;
+            SinglyLinkedNode next = head.next;
+            SinglyLinkedNode last = null;
             if(next==null){
-                head.next = new SingleLinkedNode(value);
+                head.next = new SinglyLinkedNode(value);
                 return;
             }
             while(next!=null) {
                 last = next;
                 next = next.next;
             }
-            last.next = new SingleLinkedNode(value);
+            last.next = new SinglyLinkedNode(value);
         }
     }
 
-    public SingleLinkedNode search(String value) throws Exception{
+    public SinglyLinkedNode search(String value) throws Exception{
         if (head == null) {
             throw new Exception();
         } else {
             if (head.value == value) {
                 return head;
             } else {
-                SingleLinkedNode next = head;
+                SinglyLinkedNode next = head;
                 while(next!=null){
                     if(value==next.value){
                         return next;
@@ -58,8 +58,8 @@ public class SingleLinkedList {
             if (head.value == value) {
                 head = head.next;
             } else {
-                SingleLinkedNode pre = head;
-                SingleLinkedNode next = head.next;
+                SinglyLinkedNode pre = head;
+                SinglyLinkedNode next = head.next;
                 while(next!=null&&next.value!=value){
                     pre = next;
                     next = next.next;
@@ -76,15 +76,15 @@ public class SingleLinkedList {
             throw new Exception();
         } else {
             if (head.value == value) {
-                SingleLinkedNode newHead = new SingleLinkedNode(newValue);
+                SinglyLinkedNode newHead = new SinglyLinkedNode(newValue);
                 newHead.next = head.next;
                 head = newHead;
             } else {
-                SingleLinkedNode pre = head;
-                SingleLinkedNode next = head.next;
+                SinglyLinkedNode pre = head;
+                SinglyLinkedNode next = head.next;
                 while(next!=null){
                     if(value==next.value){
-                        SingleLinkedNode newNode = new SingleLinkedNode(newValue);
+                        SinglyLinkedNode newNode = new SinglyLinkedNode(newValue);
                         newNode.next = next.next;
                         pre.next = newNode;
                         break;
@@ -96,7 +96,7 @@ public class SingleLinkedList {
     }
 
     public static void main(String[] args)  throws Exception{
-        SingleLinkedList link = new SingleLinkedList();
+        SinglyLinkedList link = new SinglyLinkedList();
         link.add("a");
         link.add("b");
         link.add("c");
@@ -111,12 +111,12 @@ public class SingleLinkedList {
     @Override
     public String toString() {
         String output = "";
-        SingleLinkedNode cur = head;
+        SinglyLinkedNode cur = head;
         while(cur != null){
             output += "["+cur.value+"],";
             cur = cur.next;
         }
-        return "SingleLinkedList{"
+        return "SinglyLinkedList{"
                 + output +
                 '}';
     }
