@@ -12,23 +12,42 @@ public class SinglyLinkedList {
         }
         private SinglyLinkedNode next;
         private String value;
+        public SinglyLinkedNode getNext() {
+            return next;
+        }
+        public void setNext(SinglyLinkedNode next) {
+            this.next = next;
+        }
+        public String getValue() {
+            return value;
+        }
+        public void setValue(String value) {
+            this.value = value;
+        }
+
+        @Override
+        public String toString() {
+            return "SinglyLinkedNode{" +
+                    "value='" + value + '\'' +
+                    '}';
+        }
     }
 
     public void add(String value){
         if (head == null) {
             head  = new SinglyLinkedNode(value);
         } else {
-            SinglyLinkedNode next = head.next;
+            SinglyLinkedNode next = head.getNext();
             SinglyLinkedNode last = null;
             if(next==null){
-                head.next = new SinglyLinkedNode(value);
+                head.setNext(new SinglyLinkedNode(value));
                 return;
             }
             while(next!=null) {
                 last = next;
-                next = next.next;
+                next = next.getNext();
             }
-            last.next = new SinglyLinkedNode(value);
+            last.setNext(new SinglyLinkedNode(value));
         }
     }
 
@@ -36,15 +55,15 @@ public class SinglyLinkedList {
         if (head == null) {
             throw new Exception();
         } else {
-            if (head.value == value) {
+            if (head.getValue() == value) {
                 return head;
             } else {
                 SinglyLinkedNode next = head;
                 while(next!=null){
-                    if(value==next.value){
+                    if(value==next.getValue()){
                         return next;
                     }
-                    next = next.next;
+                    next = next.getNext();
                 }
                 return null;
             }
@@ -55,17 +74,17 @@ public class SinglyLinkedList {
         if (head == null) {
             throw new Exception();
         } else {
-            if (head.value == value) {
-                head = head.next;
+            if (head.getValue() == value) {
+                head = head.getNext();
             } else {
                 SinglyLinkedNode pre = head;
-                SinglyLinkedNode next = head.next;
-                while(next!=null&&next.value!=value){
+                SinglyLinkedNode next = head.getNext();
+                while(next!=null&&next.getValue()!=value){
                     pre = next;
-                    next = next.next;
+                    next = next.getNext();
                 }
                 if(value==next.value){
-                    pre.next = next.next;
+                    pre.setNext(next.getNext());
                 }
             }
         }
@@ -75,21 +94,21 @@ public class SinglyLinkedList {
         if (head == null) {
             throw new Exception();
         } else {
-            if (head.value == value) {
+            if (head.getValue() == value) {
                 SinglyLinkedNode newHead = new SinglyLinkedNode(newValue);
-                newHead.next = head.next;
+                newHead.setNext(head.getNext());
                 head = newHead;
             } else {
                 SinglyLinkedNode pre = head;
-                SinglyLinkedNode next = head.next;
+                SinglyLinkedNode next = head.getNext();
                 while(next!=null){
-                    if(value==next.value){
+                    if(value==next.getValue()){
                         SinglyLinkedNode newNode = new SinglyLinkedNode(newValue);
-                        newNode.next = next.next;
-                        pre.next = newNode;
+                        newNode.setNext(next.getNext());
+                        pre.setNext(newNode);
                         break;
                     }
-                    next = next.next;
+                    next = next.getNext();
                 }
             }
         }
@@ -101,7 +120,7 @@ public class SinglyLinkedList {
         link.add("b");
         link.add("c");
         System.out.println(link);
-        System.out.println(link.search("c").value);
+        System.out.println(link.search("c").getValue());
         link.remove("c");
         System.out.println(link);
         link.set("b","d");
@@ -113,8 +132,8 @@ public class SinglyLinkedList {
         String output = "";
         SinglyLinkedNode cur = head;
         while(cur != null){
-            output += "["+cur.value+"],";
-            cur = cur.next;
+            output += "["+cur+"],";
+            cur = cur.getNext();
         }
         return "SinglyLinkedList{"
                 + output +
