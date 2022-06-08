@@ -166,7 +166,7 @@ public class DoublyLinkedList {
             output += "["+cur+"],";
             cur = cur.getNext();
         }
-        return "SinglyLinkedList{"
+        return "DoublyLinkedList{"
                 + output +
                 '}';
     }
