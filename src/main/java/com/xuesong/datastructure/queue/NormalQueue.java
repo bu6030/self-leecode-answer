@@ -2,6 +2,7 @@ package com.xuesong.datastructure.queue;
 
 /**
  * 先进先出普通队列
+ * 通过单链表实现，队列内元素个数不需要初始化，队列内元素个数可以放入很多
  * @param <E>
  */
 public class NormalQueue<E> {
