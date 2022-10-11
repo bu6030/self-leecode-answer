@@ -3,19 +3,19 @@ package com.xuesong.datastructure.linkednode;
 public class DoublyLinkedList {
     private DoublyLinkedNode head;
 
-    public void add(String value){
+    public void add(String value) {
         if (head == null) {
-            head  = new DoublyLinkedNode(value);
+            head = new DoublyLinkedNode(value);
         } else {
             DoublyLinkedNode next = head.getNext();
             DoublyLinkedNode pre = null;
-            if(next==null){
+            if (next == null) {
                 DoublyLinkedNode newNode = new DoublyLinkedNode(value);
                 newNode.setPre(head);
                 head.setNext(newNode);
                 return;
             }
-            while(next!=null) {
+            while (next != null) {
                 pre = next;
                 next = next.getNext();
             }
@@ -24,7 +24,8 @@ public class DoublyLinkedList {
             pre.setNext(newNode);
         }
     }
-    public DoublyLinkedNode search(String value) throws Exception{
+
+    public DoublyLinkedNode search(String value) throws Exception {
         if (head == null) {
             throw new Exception();
         } else {
@@ -32,8 +33,8 @@ public class DoublyLinkedList {
                 return head;
             } else {
                 DoublyLinkedNode next = head.getNext();
-                while(next!=null){
-                    if(value==next.getValue()){
+                while (next != null) {
+                    if (value == next.getValue()) {
                         return next;
                     }
                     next = next.getNext();
@@ -43,7 +44,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public void remove(String value) throws Exception{
+    public void remove(String value) throws Exception {
         if (head == null) {
             throw new Exception();
         } else {
@@ -54,15 +55,15 @@ public class DoublyLinkedList {
             } else {
                 DoublyLinkedNode pre = head;
                 DoublyLinkedNode next = head.getNext();
-                while(next!=null&&next.getValue()!=value){
+                while (next != null && next.getValue() != value) {
                     pre = next;
                     next = next.getNext();
                 }
-                //找到了
-                if(next!=null && value==next.value){
+                // 找到了
+                if (next != null && value == next.value) {
                     DoublyLinkedNode newNext = next.getNext();
                     pre.setNext(newNext);
-                    if(newNext!=null) {
+                    if (newNext != null) {
                         newNext.setPre(pre);
                     }
                     next.setNext(null);
@@ -72,7 +73,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public void set(String value, String newValue) throws Exception{
+    public void set(String value, String newValue) throws Exception {
         if (head == null) {
             throw new Exception();
         } else {
@@ -84,13 +85,13 @@ public class DoublyLinkedList {
             } else {
                 DoublyLinkedNode pre = head;
                 DoublyLinkedNode next = head.getNext();
-                while(next!=null){
-                    if(value==next.getValue()){
+                while (next != null) {
+                    if (value == next.getValue()) {
                         DoublyLinkedNode newNode = new DoublyLinkedNode(newValue);
                         newNode.setNext(next.getNext());
                         newNode.setPre(next.getPre());
                         pre.setNext(newNode);
-                        if(next.getNext()!=null) {
+                        if (next.getNext() != null) {
                             next.getNext().setPre(newNode);
                         }
                         next.setPre(null);
@@ -104,7 +105,7 @@ public class DoublyLinkedList {
         }
     }
 
-    public static void main(String[] args)  throws Exception{
+    public static void main(String[] args) throws Exception {
         DoublyLinkedList link = new DoublyLinkedList();
         link.add("a");
         link.add("b");
@@ -115,7 +116,7 @@ public class DoublyLinkedList {
         System.out.println(link.search("c"));
         link.remove("e");
         System.out.println(link);
-        link.set("d","f");
+        link.set("d", "f");
         System.out.println(link);
     }
 
@@ -123,6 +124,7 @@ public class DoublyLinkedList {
         public DoublyLinkedNode(String value) {
             this.value = value;
         }
+
         private DoublyLinkedNode pre;
         private DoublyLinkedNode next;
         private String value;
@@ -154,20 +156,21 @@ public class DoublyLinkedList {
         @Override
         public String toString() {
             return "DoublyLinkedNode{" +
-                    "value='" + value + '\'' +
-                    '}';
+                "value='" + value + '\'' +
+                '}';
         }
     }
+
     @Override
     public String toString() {
         String output = "";
         DoublyLinkedNode cur = head;
-        while(cur != null){
-            output += "["+cur+"],";
+        while (cur != null) {
+            output += "[" + cur + "],";
             cur = cur.getNext();
         }
         return "DoublyLinkedList{"
-                + output +
-                '}';
+            + output +
+            '}';
     }
 }

@@ -3,6 +3,7 @@ package com.xuesong.sort;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
 /**
  * 选择排序
  * （1）选择排序，顾名思义，从左到右遍历，每次选择最小的一个，放到第一个，之后从第二个元素开始遍历，再次选出最小的，放到第二个，接下来从第三个元素开始遍历，选出最小的，放到第三个，直到遍历到最后一个元素，此时已经排序完成。
@@ -17,10 +18,10 @@ public class SelectionSort {
         for (int i = 0; i < 100; i++) {
             nums.add(random.nextInt(100));
         }
-        nums.forEach(s -> System.out.print(s+"-"));
+        nums.forEach(s -> System.out.print(s + "-"));
         System.out.println("");
         nums = selectionSort(nums);
-        nums.forEach(s -> System.out.print(s+"-"));
+        nums.forEach(s -> System.out.print(s + "-"));
     }
 
     public static List selectionSort(List nums) {
@@ -32,13 +33,13 @@ public class SelectionSort {
             int index = -1;
             for (int j = i; j < nums.size(); j++) {
                 // 如果当前遍历到的值比最小值小则设定最小值为当前遍历到的值，以及记录位置index
-                if ((int)nums.get(j) < min) {
-                    min = (int)nums.get(j);
+                if ((int) nums.get(j) < min) {
+                    min = (int) nums.get(j);
                     index = j;
                 }
             }
             // 修改本次遍历的列表中的首位与最小值的位置
-            int oldFirst = (int)nums.get(i);
+            int oldFirst = (int) nums.get(i);
             nums.set(i, min);
             nums.set(index, oldFirst);
         }

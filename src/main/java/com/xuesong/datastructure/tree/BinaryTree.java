@@ -7,31 +7,39 @@ package com.xuesong.datastructure.tree;
 public class BinaryTree<E> {
 
     private TreeNode head;
-    public BinaryTree () {
+
+    public BinaryTree() {
     }
 
-    public static class TreeNode <E> {
-        public TreeNode (E value) {
+    public static class TreeNode<E> {
+        public TreeNode(E value) {
             this.value = value;
         }
+
         private E value;
         private TreeNode left;
         private TreeNode right;
+
         public E getValue() {
             return value;
         }
+
         public void setValue(E value) {
             this.value = value;
         }
+
         public TreeNode getLeft() {
             return left;
         }
+
         public void setLeft(TreeNode left) {
             this.left = left;
         }
+
         public TreeNode getRight() {
             return right;
         }
+
         public void setRight(TreeNode right) {
             this.right = right;
         }
@@ -39,8 +47,8 @@ public class BinaryTree<E> {
         @Override
         public String toString() {
             return "TreeNode{" +
-                    "value=" + value +
-                    '}';
+                "value=" + value +
+                '}';
         }
     }
 
@@ -48,10 +56,10 @@ public class BinaryTree<E> {
      * 前序输出，先根节点，再左节点，最后右节点
      */
     public void prePrint(TreeNode node) {
-        if(node==null){
+        if (node == null) {
             return;
         }
-        System.out.print(node.value+"-");
+        System.out.print(node.value + "-");
         prePrint(node.left);
         prePrint(node.right);
     }
@@ -60,11 +68,11 @@ public class BinaryTree<E> {
      * 中序输出，先左，后根，最后右
      */
     public void midPrint(TreeNode node) {
-        if(node==null){
+        if (node == null) {
             return;
         }
         midPrint(node.left);
-        System.out.print(node.value+"-");
+        System.out.print(node.value + "-");
         midPrint(node.right);
     }
 
@@ -72,12 +80,12 @@ public class BinaryTree<E> {
      * 后序输出，先左后右最后根
      */
     public void lastPrint(TreeNode node) {
-        if(node==null){
+        if (node == null) {
             return;
         }
         lastPrint(node.left);
         lastPrint(node.right);
-        System.out.print(node.value+"-");
+        System.out.print(node.value + "-");
     }
 
     /**           1
@@ -108,14 +116,14 @@ public class BinaryTree<E> {
         node4.setRight(node8);
         node5.setLeft(node9);
         BinaryTree binaryTree = new BinaryTree();
-        //前序
+        // 前序
         System.out.println("前序");
         binaryTree.prePrint(node1);
-        //中序
+        // 中序
         System.out.println("");
         System.out.println("中序");
         binaryTree.midPrint(node1);
-        //后续
+        // 后续
         System.out.println("");
         System.out.println("后序");
         binaryTree.lastPrint(node1);

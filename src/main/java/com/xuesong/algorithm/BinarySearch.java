@@ -1,8 +1,7 @@
 package com.xuesong.algorithm;
 
 /**
- * 二分查找
- * 前提数组是已经排好顺序的
+ * 二分查找 前提数组是已经排好顺序的
  */
 public class BinarySearch {
     public static void main(String[] args) {

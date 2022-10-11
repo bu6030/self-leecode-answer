@@ -3,7 +3,6 @@ package com.xuesong.datastructure.queue;
 /**
  * 先进先出普通队列
  * 通过单链表实现，队列内元素个数不需要初始化，队列内元素个数可以放入很多
- * @param <E>
  */
 public class NormalQueue<E> {
     private SinglyLinkedNode first;
@@ -11,12 +10,14 @@ public class NormalQueue<E> {
 
     /**
      * 通过单链表即可实现
+     * 
      * @param <E>
      */
-    public static class SinglyLinkedNode <E> {
-        public SinglyLinkedNode (E value) {
+    public static class SinglyLinkedNode<E> {
+        public SinglyLinkedNode(E value) {
             this.value = value;
         }
+
         private E value;
         private SinglyLinkedNode next;
 
@@ -31,16 +32,17 @@ public class NormalQueue<E> {
         @Override
         public String toString() {
             return "SinglyLinkedNode{" +
-                    "value=" + value +
-                    '}';
+                "value=" + value +
+                '}';
         }
     }
 
     /**
      * 从队尾插入新节点
+     * 
      * @param e
      */
-    public void push(E e){
+    public void push(E e) {
         SinglyLinkedNode newNode = new SinglyLinkedNode(e);
         if (first == null) {
             first = newNode;
@@ -52,16 +54,17 @@ public class NormalQueue<E> {
             last = newNode;
         }
     }
+
     /**
      * 从队首取出节点
      */
-    public E pop(){
+    public E pop() {
         if (first == null) {
             return null;
         }
         SinglyLinkedNode<E> node = first;
         first = first.next;
-        if(first == null){
+        if (first == null) {
             last = null;
         }
         return node.getValue();
@@ -74,8 +77,8 @@ public class NormalQueue<E> {
         queue.push("c");
         queue.push("d");
         String result = queue.pop();
-        while(result!=null){
-            System.out.println("pop == "+result);
+        while (result != null) {
+            System.out.println("pop == " + result);
             result = queue.pop();
         }
     }

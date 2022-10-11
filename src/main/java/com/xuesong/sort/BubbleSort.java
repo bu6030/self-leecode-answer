@@ -17,18 +17,18 @@ public class BubbleSort {
         for (int i = 0; i < 100; i++) {
             nums.add(random.nextInt(100));
         }
-        nums.forEach(s -> System.out.print(s+"-"));
+        nums.forEach(s -> System.out.print(s + "-"));
         System.out.println("");
         nums = bubbleSort(nums);
-        nums.forEach(s -> System.out.print(s+"-"));
+        nums.forEach(s -> System.out.print(s + "-"));
     }
 
     public static List bubbleSort(List nums) {
         for (int i = 0; i < nums.size(); i++) {
-            for (int j = i+1; j < nums.size(); j++) {
+            for (int j = i + 1; j < nums.size(); j++) {
                 // 比较j元素与i元素大小，如果i元素大与j元素，则互换位置
-                if ((int)nums.get(j) < (int)nums.get(i)) {
-                    int large = (int)nums.get(i);
+                if ((int) nums.get(j) < (int) nums.get(i)) {
+                    int large = (int) nums.get(i);
                     nums.set(i, nums.get(j));
                     nums.set(j, large);
                 }

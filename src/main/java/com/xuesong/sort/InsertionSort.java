@@ -20,19 +20,19 @@ public class InsertionSort {
         for (int i = 0; i < 100; i++) {
             nums.add(random.nextInt(100));
         }
-        nums.forEach(s -> System.out.print(s+"-"));
+        nums.forEach(s -> System.out.print(s + "-"));
         System.out.println("");
         nums = insertionSort(nums);
-        nums.forEach(s -> System.out.print(s+"-"));
+        nums.forEach(s -> System.out.print(s + "-"));
     }
 
     public static List insertionSort(List nums) {
         for (int i = 1; i < nums.size(); i++) {
             for (int j = i; j >= 1; j--) {
                 // 比较当前位置与前一个位置大小，如果当前数值小与前一个数值，则将当前数值插入到前面
-                if ((int)nums.get(j) < (int)nums.get(j-1)) {
-                    int old = (int)nums.get(j-1);
-                    nums.set(j-1, (int)nums.get(j));
+                if ((int) nums.get(j) < (int) nums.get(j - 1)) {
+                    int old = (int) nums.get(j - 1);
+                    nums.set(j - 1, (int) nums.get(j));
                     nums.set(j, old);
                 }
             }
