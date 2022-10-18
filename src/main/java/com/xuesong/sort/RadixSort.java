@@ -63,11 +63,11 @@ public class RadixSort {
         }
         nums.forEach(s -> System.out.print(s + "-"));
         System.out.println("");
-        nums = countSort(nums);
+        nums = radixSort(nums);
         nums.forEach(s -> System.out.print(s + "-"));
     }
 
-    public static List countSort(List nums) {
+    public static List radixSort(List nums) {
         // 初始化以及获取数列中的最大值最小值
         int max = Integer.MIN_VALUE;
         for (int i = 0; i < nums.size(); i++) {
