@@ -27,7 +27,7 @@ public class BucketSort {
     public static void main(String[] args) {
         List nums = new ArrayList();
         Random random = new Random();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 100; i++) {
             nums.add(random.nextInt(100));
         }
         nums.forEach(s -> System.out.print(s + "-"));
