@@ -1,12 +1,10 @@
 package com.xuesong.java9.diamond_operator;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Java 9 中的钻石操作符支持匿名内部类，实际上可以更简洁地初始化泛型类型
+ * 但是，之前已经存在 Map.of 和 List.of/Arrays.asList，再写个这个意义何在？
  */
 public class DiamondOperatorExample {
 
