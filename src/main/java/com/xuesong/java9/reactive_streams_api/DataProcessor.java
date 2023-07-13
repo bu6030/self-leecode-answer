@@ -3,6 +3,9 @@ package com.xuesong.java9.reactive_streams_api;
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
 
+/**
+ * JAVA9 新增Reactive Streams API
+ */
 public class DataProcessor implements Subscriber<Data> {
 
     private Subscription subscription;

@@ -1,5 +1,8 @@
 package com.xuesong.java9.private_interface_methods;
 
+/**
+ * JAVA9 新增私有接口方法（private interface method）
+ */
 public interface MyInterface {
     // 公共抽象方法
     void publicMethod();
