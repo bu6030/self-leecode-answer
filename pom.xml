@@ -17,8 +17,8 @@
 
     <properties>
         <main.basedir>${project.basedir}</main.basedir>
-        <maven.compiler.source>9</maven.compiler.source>
-        <maven.compiler.target>9</maven.compiler.target>
+        <maven.compiler.source>10</maven.compiler.source>
+        <maven.compiler.target>10</maven.compiler.target>
     </properties>
 
     <dependencies>

@@ -21,14 +21,14 @@ public class Test {
                 , new DemoEntity("aa","bb"), new DemoEntity("aa","bb"), new DemoEntity("aa","bb")
                 , new DemoEntity("aa","bb"), new DemoEntity("aa","bb")
                 , new DemoEntity("aa","bb"), new DemoEntity("aa","bb"));
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 10000000; i++) {
             Demo newDemo = demo.clone();
         }
         end = System.currentTimeMillis();
         time = (end - start );
         System.out.println("clone create times is " + time);
 
-        for (int i = 0; i < 100000; i++) {
+        for (int i = 0; i < 10000000; i++) {
             demo = new Demo("aa","bb", new DemoEntity("aa","bb"), new DemoEntity("aa","bb"), new DemoEntity("aa","bb")
                     , new DemoEntity("aa","bb"), new DemoEntity("aa","bb"), new DemoEntity("aa","bb")
                     , new DemoEntity("aa","bb"), new DemoEntity("aa","bb")

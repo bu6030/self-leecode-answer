@@ -7,7 +7,7 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
- *
+ * JAVA9 stream 增强
  * 1. takeWhile是遇到第一个不符合的元素时停止，即使后边仍然有满足的元素，并返回前面的
  * 2. dropWhile是遇到第一个不符合的元素时停止，丢弃前面所有满足的元素，返回后边的元素
  * 3. ofNullable() 方法允许我们创建一个包含单个元素的 Stream，如果传入的元素是非空的
