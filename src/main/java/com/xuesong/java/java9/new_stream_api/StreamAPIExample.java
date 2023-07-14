@@ -1,4 +1,4 @@
-package com.xuesong.java9.new_stream_api;
+package com.xuesong.java.java9.new_stream_api;
 
 import java.util.ArrayList;
 import java.util.List;

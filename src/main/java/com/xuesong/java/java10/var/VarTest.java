@@ -1,4 +1,4 @@
-package com.xuesong.java10.var;
+package com.xuesong.java.java10.var;
 
 import java.util.ArrayList;
 import java.util.HashMap;

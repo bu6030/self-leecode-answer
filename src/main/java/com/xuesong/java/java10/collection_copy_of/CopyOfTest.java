@@ -1,4 +1,4 @@
-package com.xuesong.java10.collection_copy_of;
+package com.xuesong.java.java10.collection_copy_of;
 
 import java.util.ArrayList;
 import java.util.List;

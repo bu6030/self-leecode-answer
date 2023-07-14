@@ -1,4 +1,4 @@
-package com.xuesong.java9.try_with_resources;
+package com.xuesong.java.java9.try_with_resources;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

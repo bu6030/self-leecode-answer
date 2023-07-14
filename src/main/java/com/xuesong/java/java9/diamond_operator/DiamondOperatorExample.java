@@ -1,4 +1,4 @@
-package com.xuesong.java9.diamond_operator;
+package com.xuesong.java.java9.diamond_operator;
 
 import java.util.*;
 

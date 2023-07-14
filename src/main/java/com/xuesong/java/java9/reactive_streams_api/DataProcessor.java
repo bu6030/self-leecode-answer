@@ -1,4 +1,4 @@
-package com.xuesong.java9.reactive_streams_api;
+package com.xuesong.java.java9.reactive_streams_api;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;

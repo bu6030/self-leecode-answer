@@ -1,4 +1,4 @@
-package com.xuesong.java9.private_interface_methods;
+package com.xuesong.java.java9.private_interface_methods;
 
 public class MyClass implements MyInterface {
     @Override
