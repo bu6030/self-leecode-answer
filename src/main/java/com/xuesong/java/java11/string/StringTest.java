@@ -2,6 +2,11 @@ package com.xuesong.java.java11.string;
 
 import java.util.stream.Collectors;
 
+/**
+ * Java 11 在 String 类中添加了一些新的实用方法
+ * 例如 isBlank()、strip()、stripLeading()、stripTrailing()、lines()、repeat()
+ * 这些方法使得对字符串进行处理和操作更加方便。
+ */
 public class StringTest {
 
     public static void main(String[] args) {

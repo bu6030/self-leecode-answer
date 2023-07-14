@@ -5,6 +5,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
+/**
+ * Java 11 引入了一个标准化的 HttpClient
+ * 用于发送 HTTP 请求和处理响应
+ * 这个 API 提供了更简洁、更灵活的方式来进行 HTTP 通信，并支持异步操作和流式处理。
+ */
 public class HTTPClientTest {
     public static void main(String[] args) {
         // 创建一个 HttpClient 实例
