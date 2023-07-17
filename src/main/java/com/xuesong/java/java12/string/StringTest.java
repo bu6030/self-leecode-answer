@@ -2,6 +2,10 @@ package com.xuesong.java.java12.string;
 
 import java.util.Optional;
 
+
+/**
+ * JAVA 12 String 增强方法indent，transform
+ */
 public class StringTest {
     public static void main(String[] args) {
         // String.indent(int n)：该方法用于对字符串进行缩进。
