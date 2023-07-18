@@ -24,7 +24,7 @@ public class RandomNumberTest {
                 RandomGeneratorFactory.of("L128X256MixRandom");
         // 使用时间戳作为随机数种子
         RandomGenerator randomGenerator = l128X256MixRandom.create(System.currentTimeMillis());
-        // 生成随机数
+        // 生成随机数，并统计随机生成的个数
         int random = -1;
         Map<Integer, Integer> numberCountMap = new HashMap<>();
         for (int i = 0; i < 100000; i++) {
