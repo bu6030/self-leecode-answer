@@ -7,4 +7,5 @@ package com.xuesong.java.java17.sealed;
 public sealed class Demo
 permits Child, NoSealedChild {
 
+
 }
