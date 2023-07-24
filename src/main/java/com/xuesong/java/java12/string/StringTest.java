@@ -1,8 +1,5 @@
 package com.xuesong.java.java12.string;
 
-import java.util.Optional;
-
-
 /**
  * JAVA 12 String 增强方法indent，transform
  */
