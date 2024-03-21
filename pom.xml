@@ -17,8 +17,8 @@
 
     <properties>
         <main.basedir>${project.basedir}</main.basedir>
-        <maven.compiler.source>19</maven.compiler.source>
-        <maven.compiler.target>19</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
     </properties>
 
     <dependencies>
@@ -33,30 +33,30 @@
             <version>1.0.3</version>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>net.revelc.code.formatter</groupId>
-                <artifactId>formatter-maven-plugin</artifactId>
-                <version>2.10.0</version>
-                <configuration>
-                    <directories>
-                        <directory>${project.build.sourceDirectory}</directory>
-                        <directory>${project.build.directory}/generated-sources</directory>
-                    </directories>
-                    <configFile>${main.basedir}/self-leecode-answer-formatter.xml</configFile>
-                    <compilerSource>${java.version}</compilerSource>
-                    <compilerCompliance>${java.version}</compilerCompliance>
-                    <compilerTargetPlatform>${java.version}</compilerTargetPlatform>
-                </configuration>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>format</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            <plugin>-->
+<!--                <groupId>net.revelc.code.formatter</groupId>-->
+<!--                <artifactId>formatter-maven-plugin</artifactId>-->
+<!--                <version>2.10.0</version>-->
+<!--                <configuration>-->
+<!--                    <directories>-->
+<!--                        <directory>${project.build.sourceDirectory}</directory>-->
+<!--                        <directory>${project.build.directory}/generated-sources</directory>-->
+<!--                    </directories>-->
+<!--                    <configFile>${main.basedir}/self-leecode-answer-formatter.xml</configFile>-->
+<!--                    <compilerSource>${java.version}</compilerSource>-->
+<!--                    <compilerCompliance>${java.version}</compilerCompliance>-->
+<!--                    <compilerTargetPlatform>${java.version}</compilerTargetPlatform>-->
+<!--                </configuration>-->
+<!--                <executions>-->
+<!--                    <execution>-->
+<!--                        <goals>-->
+<!--                            <goal>format</goal>-->
+<!--                        </goals>-->
+<!--                    </execution>-->
+<!--                </executions>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 </project>
